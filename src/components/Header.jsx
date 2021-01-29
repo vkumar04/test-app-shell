@@ -1,6 +1,6 @@
 import React, { Suspense, lazy} from 'react'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-/components
+// components
 const Home = lazy(() => import("home/Home"));
 const User = lazy(() => import("user/User"));
 import Page from './Page'
