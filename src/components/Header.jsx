@@ -6,7 +6,7 @@ import Page from './Page'
 
 const Header = () => {
     return (
-        <Suspense fallback={'Loading...'}>
+        
             <BrowserRouter>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div className="container-fluid">
@@ -26,13 +26,14 @@ const Header = () => {
                         </div>
                     </div>
                 </nav>
+            <Suspense fallback={'Loading...'}>
                 <Routes>
                     <Route path="/" element={<Page />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/user" element={<User />} />
                 </Routes>
+                </Suspense>
             </BrowserRouter>
-        </Suspense>
     )
 }
 
