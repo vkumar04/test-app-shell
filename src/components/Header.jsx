@@ -1,6 +1,7 @@
 import React, {Suspense} from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 const Home = React.lazy(() => import("home/Home"));
+const User = React.lazy(() => import("user/User"));
 
 const Header = () => {
     return (
@@ -15,17 +16,18 @@ const Header = () => {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <a className="nav-link" aria-current="page" href="#">Home</a>
+                                    <Link className="nav-link" aria-current="page" to="home">Home</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">User</a>
+                                <Link className="nav-link" aria-current="page" to="user">User</Link>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/user" element={<User />} />
                 </Routes>
             </BrowserRouter>
         </Suspense>
