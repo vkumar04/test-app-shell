@@ -1,5 +1,6 @@
 import React, {Suspense} from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+const Home = React.lazy(() => import("home/Home"));
 
 const Header = () => {
     return (
@@ -24,7 +25,7 @@ const Header = () => {
                     </div>
                 </nav>
                 <Routes>
-                    <Route path="home/*" />
+                    <Route path="home/*" element={<Home />} />
                 </Routes>
             </BrowserRouter>
         </Suspense>
