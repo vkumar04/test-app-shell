@@ -1,7 +1,8 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, lazy} from 'react'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-const Home = React.lazy(() => import("home/Home"));
-const User = React.lazy(() => import("user/User"));
+/components
+const Home = lazy(() => import("home/Home"));
+const User = lazy(() => import("user/User"));
 import Page from './Page'
 
 const Header = () => {
