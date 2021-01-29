@@ -26,7 +26,7 @@ const Header = () => {
                         </div>
                     </div>
                 </nav>
-            <Suspense fallback={'Loading...'}>
+            <Suspense fallback={<div>Loading</div>}>
                 <Routes>
                     <Route path="/" element={<Page />} />
                     <Route path="/home" element={<Home />} />
